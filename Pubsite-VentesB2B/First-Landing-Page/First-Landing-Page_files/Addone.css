@@ -1,0 +1,190 @@
+﻿
+       
+        .btn
+        {
+            text-align: center;
+    background: none !important;
+    -moz-box-shadow: inset 0px 1px 0px 0px #fff6af !important;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #fff6af !important;
+    box-shadow: inset 0px 1px 0px 0px #3b0357 !important;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23) ) !important;
+    background: -moz-linear-gradient( center top, #ffec64 5%, #ffab23 100% ) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23') !important;
+    background-color: #ffec64 !important;
+    -moz-border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ffaa22 !important;
+    display: inline-block !important;
+    color: #333333 !important;
+    font-family: helvetica,sans-serif !important;
+    font-size: 19px !important;
+    font-weight: 300 !important;
+    padding: 7px 30px !important;
+    text-decoration: none !important;
+   
+    width: 100%;
+        }
+        
+        .validation
+        {
+                color: red;
+                visibility: visible;
+               
+        }
+        .jumbotron {
+    padding: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #eee;
+    width:100%;
+}
+
+
+
+#bodyId {
+  background: #ffffff;
+  font-family: helvetica, sans-serif;
+  font-size: 12px;
+  text-align: left;
+  margin: 0px;
+  padding: 0px;
+}
+div#outerWrapDiv {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+div#innerWrapDiv {
+  position: relative;
+  background: #ffffff;
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+@media screen and (min-width: 414px) 
+{ 
+  
+   
+   .formSpan
+   {display: block;
+    background: #C5EFFD;
+    margin: 4px auto 0 auto;
+-webkit-border-radius: 4px;
+border-radius: 4px;}
+}
+
+@media only screen and (max-width:767px) 
+{
+
+       .h1-Heading{ font-size:25px !important;}
+       footer{ position:inherit!important;}
+
+}
+
+
+
+
+.lpeCElement {
+  position:absolute;
+}
+.imageSpan img{
+  width:100%; height:auto;
+}
+.list-ul
+{
+    margin-top: 0;
+    margin-bottom: 10px;
+    list-style:initial;
+}
+.list-li
+{
+   color: #F47D20;
+    margin: 0 0 10px -10px;
+}
+#lpeCDiv_58111 {left:148px; top:36px; width:969px; z-index:15; height:63px; }
+#lpeCDiv_58112 {left:153px; top:96px; width:911px; z-index:15; }
+#lpeCDiv_58113 {left:154px; top:198px; width:609px; z-index:15; height:380px; }
+#lpeCDiv_58114 {left:838px; top:234px; z-index:15; width:326px; height:281px; }
+#lpeCDiv_58115 {left:846px; top:608px; width:300px; z-index:15; }
+#lpeCDiv_58116 {left:831px; top:176px; width:489px; z-index:15; }
+#lpeCDiv_58117 {min-width:50px; z-index:15; min-height:50px; left:552px; top:288px; }
+
+
+
+
+
+DIV#containerColLeft{height: ; line-height: 20px; }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px), only screen and (max-device-height: 480px){}
+
+
+.mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
+color:#fff;
+border:1px solid #75ae4c;
+padding:0.4em 1em;
+font-size:1em;
+background-color:#99c47c;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#99c47c), to(#75ae4c));
+background-image: -webkit-linear-gradient(top, #99c47c, #75ae4c);
+background-image: -moz-linear-gradient(top, #99c47c, #75ae4c);
+background-image: linear-gradient(to bottom, #99c47c, #75ae4c);
+}
+.mktoForm .mktoButtonWrap.mktoSimple .mktoButton:hover {
+border:1px solid #447f19;
+}
+.mktoForm .mktoButtonWrap.mktoSimple .mktoButton:focus {
+outline:none;
+border:1px solid #447f19;
+}
+.mktoForm .mktoButtonWrap.mktoSimple .mktoButton:active{
+background-color:#75ae4c;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#75ae4c), to(#99c47c));
+background-image: -webkit-linear-gradient(top, #75ae4c, #99c47c);
+background-image: -moz-linear-gradient(top, #75ae4c, #99c47c);
+background-image: linear-gradient(to bottom, #75ae4c, #99c47c);
+}
+  .btn
+        {
+            text-align: center;
+    background: none !important;
+    -moz-box-shadow: inset 0px 1px 0px 0px #3b0357 !important;
+    -webkit-box-shadow: inset 0px 1px 0px 0px #fff6af !important;
+    box-shadow: inset 0px 1px 0px 0px #3b0357 !important;
+    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3b0357), color-stop(1, #3b0357) ) !important;
+    background: -moz-linear-gradient( center top, #ffec64 5%, #ffab23 100% ) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23') !important;
+    background-color: #ffec64 !important;
+    -moz-border-radius: 4px !important;
+    -webkit-border-radius: 4px !important;
+    border-radius: 4px !important;
+    border: 1px solid #3b0357 !important;
+    display: inline-block !important;
+    color: #ffffff!important;
+    font-family: helvetica,sans-serif !important;
+    font-size: 19px !important;
+    font-weight: 300 !important;
+    padding: 7px 30px !important;
+    text-decoration: none !important;
+   
+   
+        }
+        .lable-name
+        {
+            width:27%;
+             float:left;
+        }
+        .textbox
+        {
+            width:70%;
+            float:left;
+             margin-left:1%;
+             background-color: #ffffff;
+        }
+        .form-div input[type="text"]{width:100%}
+        .form-div{width:100%; padding:20px;}
+        
+    

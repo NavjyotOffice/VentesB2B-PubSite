@@ -1,0 +1,51 @@
+﻿@model Pubsite_VentesB2B.Models.News
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>News</h4>
+    <table class="table col-md-12">
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ContentDetail.Title)</td>
+            <td>@Html.DisplayFor(model => model.ContentDetail.Title)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ContentDetail.Description)</td>
+            <td>@Html.DisplayFor(model => model.ContentDetail.Description)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ContentDetail.URL)</td>
+            <td>@Html.DisplayFor(model => model.ContentDetail.URL, new { @target="_blank" })</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ContentDetail.Author)</td>
+            <td>@Html.DisplayFor(model => model.ContentDetail.Author)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.ContentDetail.Keywords)</td>
+            <td>@Html.DisplayFor(model => model.ContentDetail.Keywords)</td>
+        </tr>
+        <tr>
+            <td>Banner Image</td>
+            @*<td><img src="~/@Url.Content(Model.ContentDetail.Image)" alt="Image" /></td>*@
+            <td><img src="~/@Html.DisplayFor(model=>model.ContentDetail.Image)" class="col-md-8" alt="Image" /></td>
+        </tr>
+        
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.NewsDate)</td>
+            <td>@Html.DisplayFor(model => model.NewsDate)</td>
+        </tr>
+    </table>
+</div>
+<br /><br />
+<p>
+
+    @Html.ActionLink("Back to List", "Index") | 
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NewsID }) | 
+    @Html.ActionLink("Delete", "Delete", new { id = Model.NewsID })
+</p>

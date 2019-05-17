@@ -1,0 +1,62 @@
+﻿<div>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+        <script src="../Scripts/jquery-3.3.1.js"></script>
+        <script src="../Scripts/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <style type="text/css">
+            input {
+                margin: 5px;
+            }
+        </style>
+        <script src="../Scripts/App/EmailLPTrack.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                hideQueryStringFields();
+
+                $('#myform').submit(function (e) {
+                    e.preventDefault();
+                    var data = colectFormData();
+                    PostDataFormSubmit(data, 'DemoLP-ThankYou.html', 'Click');
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div style="text-align:center">
+            Demo LP
+            <form id="myform">
+                <div><input name="Email" type="text" id="Email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required /></div>
+                <div><input name="FirstName" type="text" id="FirstName" placeholder="FirstName" required /></div>
+                <div><input name="LastName" type="text" id="LastName" placeholder="LastName" required /></div>
+                <div><input name="Company" type="text" id="Company" placeholder="Company" required /></div>
+                <div><input name="Address" type="text" id="Address" placeholder="Address" required /></div>
+                <div><input name="City" type="text" id="City" placeholder="City" required /></div>
+                <div><input name="State" type="text" id="State" placeholder="State" required /></div>
+                <div><input name="Zip" type="text" id="Zip" placeholder="Zip" required /></div>
+                <div><input name="Country" type="text" id="Country" placeholder="Country" required /></div>
+                <div><input name="Phone" type="text" id="Phone" placeholder="Phone" required /></div>
+                <div><input name="JobTitle" type="text" id="JobTitle" placeholder="JobTitle" required /></div>
+                <div><input name="Revenue" type="text" id="Revenue" placeholder="Revenue" required /></div>
+                <div><input name="EmployeeSize" type="text" id="EmployeeSize" placeholder="Employee Size" required /></div>
+                <div><input name="Industry" type="text" id="Industry" placeholder="Industry" required /></div>
+                <div><input name="CustomQuestion1" type="text" id="CustomQuestion1" placeholder="CustomQuestion1" required /></div>
+                <div><input name="CustomQuestion2" type="text" id="CustomQuestion2" placeholder="CustomQuestion2" required /></div>
+                <div><input name="CustomQuestion3" type="text" id="CustomQuestion3" placeholder="CustomQuestion3" required /></div>
+                <div><input name="CustomQuestion4" type="text" id="CustomQuestion4" placeholder="CustomQuestion4" required /></div>
+                <div><input name="CustomQuestion5" type="text" id="CustomQuestion5" placeholder="CustomQuestion5" required /></div>
+                <div><input name="OptIn" type="checkbox" id="OptIn" placeholder="OptIn" /> <label for="OptIn">OptInt</label></div>
+                <div><input name="CampaignName" id="CampaignName" type="hidden" value="FirstCampaign_07_05_2019" /></div>
+                <div><input type="submit" name="Submit" id="Submit" value="Submit" /></div>
+            </form>
+        </div>
+    </body>
+</html>
+</div>

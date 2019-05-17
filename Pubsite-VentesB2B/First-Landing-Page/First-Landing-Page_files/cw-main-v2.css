@@ -1,0 +1,206 @@
+/* Updated 18-May-2015 (S3) */
+body *, #bodyId {font-family: helvetica, sans-serif;text-align:left;}
+h1,h2,h3 {font-weight: 300;font-family: helvetica, sans-serif;}
+body.cw-one-column #containerBody {margin-left:20px;}
+/* Header */
+#gn {
+	display: block;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	z-index: 999;
+}
+#logo {
+	display: block;
+	float: left;
+	margin: 7px 40px 0 0;
+}
+#logo a {display:inline-block; background: url(http://www.cmswire.com/~/media/346f68a07ac545a09971abfdb558e17a.png) no-repeat;width:173px; height:28px;}
+
+/* Body */
+#containerMain {margin-bottom:60px;}
+#containerColLeft {font-family:helvetica,sans-serif;font-size:16px;line-height:21px !important;font-weight:300;}
+#containerColLeft img {margin:0 20px 10px 0 !important;} 
+#containerColLeft li {color:#333;}
+#containerColLeft li span {color:#333;}
+#containerColLeft p {margin:0 0 0 0;line-height:22px;}
+.sponsored-by p {font-size:11px;color: #999999;text-align:center;margin-top:5px !important;}
+
+
+#containerMain .cw-single-column {padding-left:50px;}
+
+/* Form */
+.formSpan {background:#fff; width:100%!important; float:left!important;}
+.formSpan h3 {margin: 0 0 15px 20px;font-size: 22px;}
+.formSpan label, .formSpan label.mktoLabel, .mktoForm .mktoRequiredField label.mktoLabel {font-weight: 300 !important;font-size:14px;}
+.formSpan input {
+color: #555;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+background-color: #fff;
+border: 1px solid #ccc;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition: border linear .2s,box-shadow linear .2s;
+-moz-transition: border linear .2s,box-shadow linear .2s;
+-o-transition: border linear .2s,box-shadow linear .2s;
+transition: border linear .2s,box-shadow linear .2s;
+}
+
+.inline-form {
+		display:block;
+		background: #C5EFFD;
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		-mox-border-radius: 4px;	
+}
+input[type=text], .mktoForm input[type=url], .mktoForm input[type=email], .mktoForm input[type=tel], .mktoForm input[type=number], .mktoForm input[type=date], .mktoForm textarea.mktoField, .mktoForm select.mktoField {
+	padding: 4px 5px !important; }
+
+.mktoButtonRow { display:block !important; text-align:center !important; }
+.mktoButtonRow span {margin:0 !important;text-align:center !important;}
+.mktoButtonWrap button {
+  text-align:center;
+  background:none !important;
+	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af !important;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fff6af !important;
+	box-shadow:inset 0px 1px 0px 0px #fff6af !important;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23) ) !important;
+	background:-moz-linear-gradient( center top, #ffec64 5%, #ffab23 100% ) !important;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23') !important;
+	background-color:#ffec64 !important;
+	-moz-border-radius:4px !important;
+	-webkit-border-radius:4px !important;
+	border-radius:4px !important;
+	border:1px solid #ffaa22 !important;
+	display:inline-block !important;
+	color:#333333 !important;
+	font-family:helvetica,sans-serif !important;
+	font-size: 19px !important;
+	font-weight: 300 !important;
+	padding: 7px 30px !important;
+	text-decoration:none !important;
+  margin: 15px 0 2px 8px !important;
+	width:261px;
+} 
+.mktoButtonWrap button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64) ) !important;
+	background:-moz-linear-gradient( center top, #ffab23 5%, #ffec64 100% ) !important;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64') !important;
+	background-color:#ffab23 !important;
+} 
+.mktoButtonWrap button:active {
+	position:relative !important;
+	top:1px !important;
+}
+
+.logo-left{ float:left; padding-bottom:0px;}
+.logo-right{ float:right;}
+.top-bar{ padding:0!important; margin:0!important;}
+.img-field
+{
+    border-width: 0;
+    float: left;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 10px;
+    width: 235px;
+    
+    }
+.lpContentsItem richTextSpan h1{text-align:left;}
+@media only screen and (min-width: 500px) {
+.inline-form {width:436px; margin:0 auto !important;padding:20px !important;}
+.inline-form form {margin:0 auto !important;}
+.inline-form .mktoButtonWrap button {margin-left: -25px !important;}
+}
+.inline-form label.mktoLabel, .inline-form .mktoRequiredField label.mktoLabel
+{ font-family:helvetica;font-weight:300;font-size:14px;}
+.inline-form .mktoButtonWrap button {width:auto;}
+.inline-form .mktoForm .mktoRadioList, .inline-form .mktoForm .mktoCheckboxList
+{margin-left:12px;}
+
+@media only screen and (min-width: 1200px), only screen and (max-width: 401px) {
+	.formSpan {
+		display:block;
+		background: #C5EFFD;
+		
+		-webkit-border-radius: 4px;
+		border-radius: 4px;
+		-mox-border-radius: 4px;
+	}
+
+}
+@media only screen and (max-width: 401px) {
+	.inline-form {padding:0 0 10px 0;}
+	.formSpan {padding:10px;}
+}
+
+
+/******* Webinar Date Section ********/
+#date-section {margin:25px 0 35px 0;}
+#date-section .cal {border: 1px solid white;border-radius: 0 0 3px 3px;-moz-border-radius:0 0 3px 3px;-webkit-border-radius: 0 0 3px 3px;box-shadow: 0 0 3px #666;float: left;text-align: center;margin:0 16px 10px 0;min-width:60px;text-align:center;font-family:helvetica, sans-serif !important;}
+#date-section .mon {padding: 0.3em;text-transform: uppercase;color: white;font-weight:300;background-color:#E7525A;font-size: 90%;text-align:center;font-family: helvetica, sans-serif !important;} /* #ec3d13 */
+#date-section .day {font-size: 21px;font-weight:300;padding: .3em .25em .15em .25em;color: #454545;text-align:center;font-family:helvetica, sans-serif !important;}
+#date-section .date-text {font-weight: bold;}
+#date-section h3 {padding:0;margin:0;font-size: 15px;color: #333;}
+#date-section p {padding-top:2px;width: 430px;}
+
+@media only screen and (max-width: 401px) {
+	.formSpan {margin-top:20px;}
+	.mktoButtonWrap button {width:100% !important;margin:14px 0 -8px 0 !important;}
+	#date-section p {width: auto;}
+}
+
+footer.navbar-default {
+	margin: 0;
+	padding: 0;
+	background-color: #9E9FA0;
+	width:100%;
+}
+footer div {
+	color: white;
+	text-align: center;
+	font-family: helvetica, sans-serif;
+  font-size: 11px;
+	letter-spacing: .1em;
+	margin: 0;
+	padding: 3px;
+}
+footer a, footer a:link, footer a:visited, footer a:active {
+	color: white;
+	text-decoration: none;
+	border-bottom: 1px dotted #E0D8D8;
+	font-size: 11px;
+}
+
+
+@media only screen and (min-width: 768px) {
+.jumbotron h1, .jumbotron .h1 {font-size: 53px;     text-align: center!important;}
+.jumbotron h2 {font-size: 28px;}
+.jumbotron {padding-top: 26px;padding-bottom: 26px;}
+
+}
+@media only screen and (max-width: 401px) {
+#logo a {background-size: 130px;}
+.jumbotron h1, .jumbotron .h1 {font-size: 24px;}
+.jumbotron h2 {font-size: 18px;}
+.jumbotron {padding-top: 18px;padding-bottom: 18px;}
+/* Disabled on 18-Apr-2016 
+#containerColLeft img {display:none;}
+*/
+}
+@media only screen and (max-width: 768px) 
+{
+    .logo-left{ float:left; width:100%; text-align:center;}
+.logo-right{ float:right; width:100%; text-align:center;     padding-bottom: 15px;}
+
+	.img-field
+{
+ float: none!important;
+ text-align:center!important;
+    width: 100%!important;
+    
+    }
+}

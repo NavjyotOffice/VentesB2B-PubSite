@@ -1,0 +1,48 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<Pubsite_VentesB2B.Models.Event>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ContentDetail.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ContentDetail.Description)
+        </th>
+        <th>
+            Location
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentDetail.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContentDetail.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.State)/@Html.DisplayFor(modelItem => item.Address.Country)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.EventID })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })

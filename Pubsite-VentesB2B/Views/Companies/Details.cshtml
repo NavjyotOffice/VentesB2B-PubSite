@@ -1,0 +1,49 @@
+﻿@model Pubsite_VentesB2B.Models.Company
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_TemplateLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Company</h4>
+    <table class="table col-md-12">
+        <tr>
+            <td>@Html.DisplayName("Company Name")</td>
+            <td>@Html.DisplayFor(model => model.CompanyName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Description)</td>
+            <td>@Html.DisplayFor(model => model.Description)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.WebsiteURL)</td>
+            <td>@Html.DisplayFor(model => model.WebsiteURL)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayName("Logo Image")</td>
+            <td><img src="~/@Html.DisplayFor(model=>model.LogoImage)" class="col-md-8" alt="Image" /></td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Address.City)</td>
+            <td>@Html.DisplayFor(model => model.Address.City)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Address.State)</td>
+            <td>@Html.DisplayFor(model => model.Address.State)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Address.Country)</td>
+            <td>@Html.DisplayFor(model => model.Address.Country)</td>
+        </tr>
+    </table>
+</div>
+<br /><br />
+<p>
+
+    @Html.ActionLink("Back to List", "Index") |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CompanyID }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.CompanyID})
+</p>
