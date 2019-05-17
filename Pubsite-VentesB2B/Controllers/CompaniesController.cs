@@ -20,8 +20,8 @@ namespace Pubsite_VentesB2B.Controllers
         // GET: Companies
         public ActionResult Index()
         {
-            var hospitals = db.Hospitals.Include(c => c.Address);
-            return View(hospitals.ToList());
+            var companies = db.Hospitals;
+            return View(companies.ToList());
         }
 
         // GET: Companies/Details/5
@@ -42,7 +42,6 @@ namespace Pubsite_VentesB2B.Controllers
         // GET: Companies/Create
         public ActionResult Create()
         {
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "DetailAddress");
             return View();
         }
 
@@ -72,7 +71,7 @@ namespace Pubsite_VentesB2B.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "DetailAddress", company.AddressID);
+            //ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "DetailAddress", company.AddressID);
             return View(company);
         }
 
@@ -88,7 +87,7 @@ namespace Pubsite_VentesB2B.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "DetailAddress", company.AddressID);
+            //ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "DetailAddress", company.AddressID);
             return View(company);
         }
 
@@ -113,11 +112,11 @@ namespace Pubsite_VentesB2B.Controllers
                 company.UpdatedById = user.Id;
 
                 db.Entry(company).State = EntityState.Modified;
-                db.Entry(company.Address).State = EntityState.Modified;
+                //db.Entry(company.Address).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "DetailAddress", company.AddressID);
+            //ViewBag.AddressID = new SelectList(db.Addresses, "AddressID", "DetailAddress", company.AddressID);
             return View(company);
         }
 

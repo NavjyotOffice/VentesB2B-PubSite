@@ -6,7 +6,7 @@ using System.Data.Entity.Spatial;
 
 namespace Pubsite_VentesB2B.Models
 {
-    public enum NewsType { FeaturedNews, TrendingNews }
+    public enum NewsType { Featured, Trending }
     public partial class News
     {
         public int NewsID { get; set; }

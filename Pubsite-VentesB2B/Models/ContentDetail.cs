@@ -39,6 +39,8 @@ namespace Pubsite_VentesB2B.Models
         [DataType(DataType.Url)]
         public string URL { get; set; }
 
+        public string CompanyName { get; set; }
+
         public bool HideOnSite { get; set; }
 
         public DateTime? CreatedDate { get; set; }

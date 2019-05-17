@@ -382,6 +382,7 @@
     <Content Include="Images\ventesb2b.png" />
     <Content Include="Images\pixel.png" />
     <Content Include="Images\ventesb2bFull.png" />
+    <Content Include="Scripts\App\App.js" />
     <Content Include="Scripts\App\EmailLPTrack.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

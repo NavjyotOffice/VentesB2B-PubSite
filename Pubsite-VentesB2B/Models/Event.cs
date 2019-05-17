@@ -6,6 +6,8 @@ using System.Data.Entity.Spatial;
 
 namespace Pubsite_VentesB2B.Models
 {
+    public enum EventType { Conference, OnDemand, Live }
+
     [Table("Event")]
     public partial class Event
     {
@@ -27,6 +29,19 @@ namespace Pubsite_VentesB2B.Models
 
         public virtual ContentDetail ContentDetail { get; set; }
 
-        public string EventType { get; set; }
+        public string EventType
+        {
+            get
+            {
+                return this.E_Type.ToString();
+            }
+            set
+            {
+                E_Type = value.ParseEnum<EventType>();
+            }
+        }
+
+        [NotMapped]
+        public EventType E_Type { get; set; }
     }
 }

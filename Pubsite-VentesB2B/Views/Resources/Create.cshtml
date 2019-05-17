@@ -6,64 +6,71 @@
 }
 
 <h2>Create</h2>
-
-
-@using (Html.BeginForm("Create", "Resources", FormMethod.Post, new { enctype = "multipart/form-data" }))
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+@using (Html.BeginForm("Create", "Resources", FormMethod.Post, new { enctype = "multipart/form-data", @Id = "formCreateResources" }))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Resource</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        <div class="form-group" id="divResourceType">
+            @Html.LabelFor(model => model.ResourceType, "Resource Type", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(x => x.R_Type, "Select Resource Type", new { @class = "form-control", @Required = "required" })
+                @Html.ValidationMessageFor(model => model.ResourceType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" id="divContentDetailTitle">
             @Html.LabelFor(model => model.ContentDetail.Title, "Title", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ContentDetail.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ContentDetail.Title, new { htmlAttributes = new { @class = "form-control", @Required = "required" } })
                 @Html.ValidationMessageFor(model => model.ContentDetail.Title, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="divContentDetailDescription">
             @Html.LabelFor(model => model.ContentDetail.Description, "Description", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.ContentDetail.Description, new { @class = "form-control col-md-12", @rows = 5 })
+                @Html.TextAreaFor(model => model.ContentDetail.Description, new { @class = "form-control col-md-12", @rows = 5, @Required = "required" })
                 @Html.ValidationMessageFor(model => model.ContentDetail.Description, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="divContentDetailURL">
             @Html.LabelFor(model => model.ContentDetail.URL, "URL Link", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ContentDetail.URL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ContentDetail.URL, new { htmlAttributes = new { @class = "form-control", @pattern = "https?://.+" } })
                 @Html.ValidationMessageFor(model => model.ContentDetail.URL, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="divContentDetailAuthor">
             @Html.LabelFor(model => model.ContentDetail.Author, "Author", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ContentDetail.Author, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ContentDetail.Author, new { htmlAttributes = new { @class = "form-control", @Required = "required" } })
                 @Html.ValidationMessageFor(model => model.ContentDetail.Author, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="divContentDetailKeywords">
             @Html.LabelFor(model => model.ContentDetail.Keywords, "Keywords", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ContentDetail.Keywords, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ContentDetail.Keywords, new { htmlAttributes = new { @class = "form-control", @Required = "required" } })
                 @Html.ValidationMessageFor(model => model.ContentDetail.Keywords, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="divContentDetailUpload">
             @Html.LabelFor(model => model.ContentDetail.Upload, "Banner Image", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextBoxFor(model => model.ContentDetail.Upload, new { type = "file" })
+                @Html.TextBoxFor(model => model.ContentDetail.Upload, new { type = "file", @Required = "required" })
+                <label id="lblFileSize"></label>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="divResourseFile">
             @Html.LabelFor(model => model.Upload, "Resourse File", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.Upload, new { type = "file" })
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" id="divContentDetailHideOnSite">
             <div class="col-md-10">
                 @Html.CheckBoxFor(model => model.ContentDetail.HideOnSite)
                 @Html.LabelFor(model => model.ContentDetail.HideOnSite, "Hide On Site", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -79,3 +86,28 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        ResourceTypeCheck();
+    });
+
+    $('#R_Type').change(function () {
+        ResourceTypeCheck();
+    });
+    function ResourceTypeCheck() {
+        let ResourceType = $('#R_Type').find(":selected").text();
+        if (ResourceType == "Whitepaper" || ResourceType == "Infographics") {
+            $('#divContentDetailURL').hide();
+            $("#divContentDetailURL").removeAttr("required");
+            $('#divResourseFile').show();
+            $("divResourseFile").attr("required", "required");
+
+        } else {
+            $('#divContentDetailURL').show();
+            $("divContentDetailURL").attr("required", "required");
+            $('#divResourseFile').hide();
+            $("#divResourseFile").removeAttr("required");
+        }
+    }
+</script>
+<script src="~/Scripts/App/App.js"></script>

@@ -4,9 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TemplateLayout.cshtml";
 }
-
 <h2>Index</h2>
-
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -26,25 +24,23 @@
         </th>
         <th></th>
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompanyName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WebsiteURL)
-        </td>
-        <td>
-            <img src="~/@Html.DisplayFor(model=>item.LogoImage)" style="width:100px" alt="Image" />
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Details", new { id=item.CompanyID })
-        </td>
-    </tr>
-}
-
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WebsiteURL)
+            </td>
+            <td>
+                <img src="~/@Html.DisplayFor(model=>item.LogoImage)" style="width:100px" alt="Image" />
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id=item.CompanyID })
+            </td>
+        </tr>
+    }
 </table>

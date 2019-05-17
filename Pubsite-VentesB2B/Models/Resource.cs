@@ -7,6 +7,7 @@ using System.Web;
 
 namespace Pubsite_VentesB2B.Models
 {
+    public enum ResourceType { Whitepaper, Video, Infographics, blog }
     public partial class Resource
     {
         [Key]
@@ -21,5 +22,19 @@ namespace Pubsite_VentesB2B.Models
 
         [NotMapped]
         public HttpPostedFileBase Upload { get; set; }
+        public string ResourceType
+        {
+            get
+            {
+                return this.R_Type.ToString();
+            }
+            set
+            {
+                R_Type = value.ParseEnum<ResourceType>();
+            }
+        }
+
+        [NotMapped]
+        public ResourceType R_Type { get; set; }
     }
 }

@@ -11,6 +11,10 @@
     <h4>Resource</h4>
     <table class="table col-md-12">
         <tr>
+            <td>@Html.DisplayNameFor(model => model.ResourceType)</td>
+            <td>@Html.DisplayFor(model => model.ResourceType)</td>
+        </tr>
+        <tr>
             <td>@Html.DisplayNameFor(model => model.ContentDetail.Title)</td>
             <td>@Html.DisplayFor(model => model.ContentDetail.Title)</td>
         </tr>
@@ -18,10 +22,13 @@
             <td>@Html.DisplayNameFor(model => model.ContentDetail.Description)</td>
             <td>@Html.DisplayFor(model => model.ContentDetail.Description)</td>
         </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.ContentDetail.URL)</td>
-            <td>@Html.DisplayFor(model => model.ContentDetail.URL, new { @target = "_blank" })</td>
-        </tr>
+        @if (!string.IsNullOrEmpty(Model.ContentDetail.URL))
+        {
+            <tr id="trContentDetailURL">
+                <td>@Html.DisplayNameFor(model => model.ContentDetail.URL)</td>
+                <td>@Html.DisplayFor(model => model.ContentDetail.URL, new { @target = "_blank" })</td>
+            </tr>
+        }
         <tr>
             <td>@Html.DisplayNameFor(model => model.ContentDetail.Author)</td>
             <td>@Html.DisplayFor(model => model.ContentDetail.Author)</td>
@@ -35,11 +42,14 @@
             @*<td><img src="~/@Url.Content(Model.ContentDetail.Image)" alt="Image" /></td>*@
             <td><img src="~/@Html.DisplayFor(model=>model.ContentDetail.Image)" class="col-md-8" alt="Image" /></td>
         </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.ResourceFile)</td>
-            <td><a target="_blank" href="~/@Html.DisplayFor(model=>model.ResourceFile)" class="col-md-8">Click here to open file</a></td>
-        </tr>
-    </table>
+        @if (!string.IsNullOrEmpty(Model.ResourceFile))
+        {
+            <tr id="trResourceFile">
+                <td>@Html.DisplayNameFor(model => model.ResourceFile)</td>
+                <td><a target="_blank" href="~/@Html.DisplayFor(model => model.ResourceFile)" class="col-md-8">Click here to open file</a></td>
+            </tr>
+        }
+        </table>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.ResourcesID }) |

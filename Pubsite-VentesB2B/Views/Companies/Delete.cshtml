@@ -27,18 +27,6 @@
             <td>@Html.DisplayName("Logo Image")</td>
             <td><img src="~/@Html.DisplayFor(model=>model.LogoImage)" class="col-md-8" alt="Image" /></td>
         </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.Address.City)</td>
-            <td>@Html.DisplayFor(model => model.Address.City)</td>
-        </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.Address.State)</td>
-            <td>@Html.DisplayFor(model => model.Address.State)</td>
-        </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.Address.Country)</td>
-            <td>@Html.DisplayFor(model => model.Address.Country)</td>
-        </tr>
     </table>
 
     @using (Html.BeginForm()) {
