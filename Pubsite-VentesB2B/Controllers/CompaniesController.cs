@@ -10,6 +10,8 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Pubsite_VentesB2B.Models;
+using PagedList;
+using PagedList.Mvc;
 
 namespace Pubsite_VentesB2B.Controllers
 {
@@ -18,10 +20,11 @@ namespace Pubsite_VentesB2B.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Companies
-        public ActionResult Index()
+        public ActionResult Index(int? Page, string searchText = "")
         {
-            var companies = db.Hospitals;
-            return View(companies.ToList());
+            searchText = searchText.Trim();
+            var companies = db.Companies.Where(c=>c.CompanyName.Contains(searchText)).ToList().ToPagedList(Page ?? 1, 10);
+            return View(companies);
         }
 
         // GET: Companies/Details/5
@@ -31,7 +34,7 @@ namespace Pubsite_VentesB2B.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Company company = db.Hospitals.Find(id);
+            Company company = db.Companies.Find(id);
             if (company == null)
             {
                 return HttpNotFound();
@@ -66,7 +69,7 @@ namespace Pubsite_VentesB2B.Controllers
                 company.UpdatedDate = DateTime.Now;
                 company.CreatedById = user.Id;
                 company.UpdatedById = user.Id;
-                db.Hospitals.Add(company);
+                db.Companies.Add(company);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -82,7 +85,7 @@ namespace Pubsite_VentesB2B.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Company company = db.Hospitals.Find(id);
+            Company company = db.Companies.Find(id);
             if (company == null)
             {
                 return HttpNotFound();
@@ -127,7 +130,7 @@ namespace Pubsite_VentesB2B.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Company company = db.Hospitals.Find(id);
+            Company company = db.Companies.Find(id);
             if (company == null)
             {
                 return HttpNotFound();
@@ -141,8 +144,8 @@ namespace Pubsite_VentesB2B.Controllers
         [AuthFilter(Roles ="AppAdmin")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Company company = db.Hospitals.Find(id);
-            db.Hospitals.Remove(company);
+            Company company = db.Companies.Find(id);
+            db.Companies.Remove(company);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

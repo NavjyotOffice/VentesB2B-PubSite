@@ -20,9 +20,10 @@ namespace Pubsite_VentesB2B.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Events
-        public ActionResult Index(int? Page)
+        public ActionResult Index(int? Page, string searchText = "")
         {
-            var events = db.Events.Include(e => e.Address).Include(e => e.ContentDetail).ToList().ToPagedList(Page ?? 1, 10);
+            searchText = searchText.Trim();
+            var events = db.Events.Include(e => e.Address).Include(e => e.ContentDetail).ToList().Where(n => n.ContentDetail.Title.Contains(searchText.ToString())).ToPagedList(Page ?? 1, 10);
             return View(events);
         }
 

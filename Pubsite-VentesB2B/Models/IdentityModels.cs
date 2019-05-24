@@ -34,7 +34,7 @@ namespace Pubsite_VentesB2B.Models
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<ContentDetail> ContentDetails { get; set; }
         public virtual DbSet<Event> Events { get; set; }
-        public virtual DbSet<Company> Hospitals { get; set; }
+        public virtual DbSet<Company> Companies { get; set; }
         public virtual DbSet<News> News { get; set; }
         public virtual DbSet<Resource> Resources { get; set; }
         public virtual DbSet<EmailCampaignLandingPageTrack> EmailCampaignLandingPageTracks { get; set; }

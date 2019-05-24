@@ -21,9 +21,10 @@ namespace Pubsite_VentesB2B.Controllers
     public class NewsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-        public ActionResult Index(int? Page)
+        public ActionResult Index(int? Page, string searchText = "")
         {
-            var news = db.News.Include(n => n.ContentDetail).ToList().ToPagedList(Page ?? 1, 10);
+            searchText = searchText.Trim();
+            var news = db.News.Include(n => n.ContentDetail).ToList().Where(n => n.ContentDetail.Title.Contains(searchText.ToString())).ToList().ToPagedList(Page ?? 1, 10);
             return View(news);
         }
 

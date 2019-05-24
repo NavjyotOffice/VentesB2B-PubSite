@@ -9,6 +9,8 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using PagedList;
+using PagedList.Mvc;
 using Pubsite_VentesB2B.Models;
 
 namespace Pubsite_VentesB2B.Controllers
@@ -18,10 +20,11 @@ namespace Pubsite_VentesB2B.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Resources
-        public ActionResult Index()
+        public ActionResult Index(int? Page, string searchText="")
         {
-            var resources = db.Resources.Include(r => r.ContentDetail);
-            return View(resources.ToList());
+            searchText = searchText.Trim();
+            var resources = db.Resources.Include(r => r.ContentDetail).Where(r => r.ContentDetail.Title.Contains(searchText)).ToList().ToPagedList(Page ?? 1, 10);
+            return View(resources);
         }
 
         // GET: Resources/Details/5

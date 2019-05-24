@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Pubsite_VentesB2B.Models.Resource>
+﻿@using PagedList;
+@using PagedList.Mvc;
+
+@model IEnumerable<Pubsite_VentesB2B.Models.Resource>
 
 @{
     ViewBag.Title = "Index";
@@ -6,7 +9,25 @@
 }
 
 <h2>Search Events</h2>
-
+@using (Html.BeginForm("Index", "Resources", FormMethod.Get))
+{
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" id="searchText" name="searchText" placeholder="Search" aria-label="News Title" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <input type="submit" id="btnSubmit" class="input-group-text" />
+                    </div>
+                </div>
+            </div>
+            <div>
+            </div>
+        </div>
+    </div>
+}
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
@@ -21,7 +42,8 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ContentDetail.Title)
@@ -36,3 +58,4 @@
     }
 
 </table>
+@*@Html.PagedListPager(Model, page => Url.Action("Index", new { page, searchText = Request.QueryString["searchText"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true, DisplayItemSliceAndTotal = true })*@
