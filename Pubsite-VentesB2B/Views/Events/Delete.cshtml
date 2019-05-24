@@ -45,15 +45,18 @@
             <td>@Html.DisplayNameFor(model => model.Address.Country)</td>
             <td>@Html.DisplayFor(model => model.Address.Country)</td>
         </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.StartDate)</td>
-            <td>@Html.DisplayFor(model => model.StartDate)</td>
-        </tr>
-        <tr>
-            <td>@Html.DisplayNameFor(model => model.EndDate)</td>
-            <td>@Html.DisplayFor(model => model.EndDate)</td>
-        </tr>
-    </table>
+        @if (Model.EventType.ToString() != Pubsite_VentesB2B.Models.EventType.OnDemand.ToString())
+        {
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.StartDate)</td>
+                <td>@Html.DisplayFor(model => model.StartDate)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.EndDate)</td>
+                <td>@Html.DisplayFor(model => model.EndDate)</td>
+            </tr>
+        }
+        </table>
 
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()

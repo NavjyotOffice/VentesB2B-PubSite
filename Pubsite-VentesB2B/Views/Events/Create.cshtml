@@ -122,19 +122,31 @@
 </div>
 <script type="text/javascript">
     document.getElementById('StartDate').min = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString().split("T")[0];
+    $(document).ready(function () {
+        EventTypeCheck();
+    });
     $('#StartDate').change(function () {
         document.getElementById('EndDate').value = "";
         document.getElementById('EndDate').min = document.getElementById('StartDate').value;
     });
+
     $('#E_Type').change(function () {
+        EventTypeCheck();
+    });
+
+    function EventTypeCheck() {
         if ($('#E_Type').find(":selected").text() == "OnDemand") {
             $('#divStartDate').hide();
+            $("#StartDate").removeAttr("required");
             $('#divEndDate').hide();
+            $("#EndDate").removeAttr("required");
         }
         else {
             $('#divStartDate').show();
+            $("#StartDate").attr("required", "required");
             $('#divEndDate').show();
+            $("#EndDate").attr("required", "required");
         }
-    });
+    }
 </script>
 <script src="~/Scripts/App/App.js"></script>
