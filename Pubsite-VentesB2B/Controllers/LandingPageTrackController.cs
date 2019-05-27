@@ -12,6 +12,12 @@ namespace Pubsite_VentesB2B.Controllers
     public class LandingPageTrackController : ApiController
     {
         private ApplicationDbContext db;
+
+        public HttpResponseMessage Get()
+        {
+            db = new ApplicationDbContext();
+            return Request.CreateResponse(HttpStatusCode.OK, db.EmailCampaignLandingPageTracks);
+        }
         public HttpResponseMessage Post(EmailCampaignLandingPageTrack emailCampaignTrack)
         {
             try
