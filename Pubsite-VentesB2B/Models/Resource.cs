@@ -1,8 +1,10 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Spatial;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace Pubsite_VentesB2B.Models
@@ -35,6 +37,8 @@ namespace Pubsite_VentesB2B.Models
         }
 
         [NotMapped]
+        [JsonIgnore]
+        [IgnoreDataMember]
         public ResourceType R_Type { get; set; }
     }
 }

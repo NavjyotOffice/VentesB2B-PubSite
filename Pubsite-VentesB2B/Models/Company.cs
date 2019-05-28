@@ -1,8 +1,10 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Spatial;
+using System.Runtime.Serialization;
 using System.Web;
 
 namespace Pubsite_VentesB2B.Models
@@ -31,11 +33,19 @@ namespace Pubsite_VentesB2B.Models
 
         public string CreatedById { get; set; }
         public string UpdatedById { get; set; }
+
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ApplicationUser CreatedBy { get; set; }
+
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ApplicationUser UpdatedBy { get; set; }
 
         public int? AddressID { get; set; }
 
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual Address Address { get; set; }
 
         //Not Mapped are below

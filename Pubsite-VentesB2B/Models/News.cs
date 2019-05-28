@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Spatial;
+using System.Runtime.Serialization;
 
 namespace Pubsite_VentesB2B.Models
 {
@@ -33,6 +34,7 @@ namespace Pubsite_VentesB2B.Models
         }
 
         [NotMapped]
+        [IgnoreDataMember]
         public NewsType N_Type { get; set; }
     }
 

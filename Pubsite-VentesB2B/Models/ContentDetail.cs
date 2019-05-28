@@ -1,8 +1,10 @@
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Spatial;
+using System.Runtime.Serialization;
 using System.Web;
 using System.Web.UI.WebControls;
 
@@ -47,20 +49,34 @@ namespace Pubsite_VentesB2B.Models
 
         public DateTime? UpdatedDate { get; set; }
 
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ICollection<Event> Events { get; set; }
 
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ICollection<News> News { get; set; }
 
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ICollection<Resource> Resources { get; set; }
 
         public string CreatedById { get; set; }
         public string UpdatedById { get; set; }
+
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ApplicationUser CreatedBy { get; set; }
+
+        [JsonIgnore]
+        [IgnoreDataMember]
         public virtual ApplicationUser UpdatedBy { get; set; }
 
 
         //Not Mapped are below
         [NotMapped]
+        [JsonIgnore]
+        [IgnoreDataMember]
         public HttpPostedFileBase Upload { get; set; }
     }
 }

@@ -19,7 +19,7 @@ namespace Pubsite_VentesB2B.Controllers
         public IHttpActionResult GetNews()
         {
             var AllNews = db.News;
-            return Ok(AllNews.ToList());
+            return Ok(AllNews.Select(n=>new { NewsID=n.NewsID, ContentDetail = n.ContentDetail, NewsDate=n.NewsDate}).ToList());
         }
 
         [ResponseType(typeof(News))]
